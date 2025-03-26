@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuOs</title>
+    <title>Tokat Oyunu</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,7 +49,7 @@
     </style>
 </head>
 <body>
-    <h1>Küçük Aptalı Cezalandır!</h1>
+    <h1>Küçük Aptalı Cezalandır</h1>
     <div class="game-container">
         <img id="face" src="face.jpg" alt="Yüz" class="face">
         <div id="slapEffect" class="slap-effect"></div>
@@ -63,15 +63,15 @@
             let slapEffect = document.getElementById("slapEffect");
             
             face.classList.add("red-face");
-            face.style.transform = "rotate(-10deg)";
+            face.style.transform = "translateX(-20px) rotate(-10deg)";
             slapEffect.style.opacity = "1";
             
             setTimeout(() => {
-                face.style.transform = "rotate(10deg)";
+                face.style.transform = "translateX(20px) rotate(10deg)";
             }, 100);
             
             setTimeout(() => {
-                face.style.transform = "rotate(0)";
+                face.style.transform = "translateX(0) rotate(0)";
                 face.classList.remove("red-face");
                 slapEffect.style.opacity = "0";
             }, 200);
