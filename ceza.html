@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuOs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .game-container {
+            position: relative;
+            display: inline-block;
+        }
+        .face {
+            width: 200px;
+            transition: transform 0.1s ease-in-out;
+        }
+        .red-face {
+            filter: brightness(0.8) sepia(1) hue-rotate(-50deg);
+        }
+        .slap-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: url('slap.png') no-repeat center;
+            background-size: contain;
+            transform: translate(-50%, -50%) scale(1.2);
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tokat Atma Oyunu</h1>
+    <div class="game-container">
+        <img id="face" src="face.jpg" alt="Yüz" class="face">
+        <div id="slapEffect" class="slap-effect"></div>
+    </div>
+    <br>
+    <button class="button" onclick="slap()">Tokat At!</button>
+
+    <script>
+        function slap() {
+            let face = document.getElementById("face");
+            let slapEffect = document.getElementById("slapEffect");
+            
+            face.classList.add("red-face");
+            face.style.transform = "rotate(-10deg)";
+            slapEffect.style.opacity = "1";
+            
+            setTimeout(() => {
+                face.style.transform = "rotate(10deg)";
+            }, 100);
+            
+            setTimeout(() => {
+                face.style.transform = "rotate(0)";
+                face.classList.remove("red-face");
+                slapEffect.style.opacity = "0";
+            }, 200);
+        }
+    </script>
+</body>
+</html>
