@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuOs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color:blueviolet;
+        }
+        .container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            font-size: 24px;
+            font-weight: bold;
+            color:#ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Bir daha asla seni üzmeyeceğim. Küçük bir aptal olduğum için özür dilerim.</p>
+        <img src="https://media1.tenor.com/m/0ljpL1XZ958AAAAd/sadness-inside-out-sadness-happy.gif" alt="Affet">
+        
+    </div>
+
+    <script>
+        function openNewPage() {
+            window.location.href = "newpage.html";
+        }
+        
+        function moveButton(btn) {
+            let x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            let y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = "absolute";
+            btn.style.left = `${x}px`;
+            btn.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
