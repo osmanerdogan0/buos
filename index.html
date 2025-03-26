@@ -18,7 +18,7 @@
             max-width: 600px;
             margin: auto;
             padding: 20px;
-            border: 1px solid #ccc;
+           
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
@@ -28,8 +28,8 @@
             color:#ccc;
         }
         img {
-            width: 100%;
-            max-width: 400px;
+            width: 80%;
+            max-width: 2%;
             height: auto;
             border-radius: 10px;
         }
@@ -65,8 +65,17 @@
         }
         
         function moveButton(btn) {
-            let x = Math.random() * (window.innerWidth - btn.offsetWidth);
-            let y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            let x, y;
+            let minX = 50;
+            let minY = 50;
+            let maxX = window.innerWidth - btn.offsetWidth - 50;
+            let maxY = window.innerHeight - btn.offsetHeight - 50;
+            
+            do {
+                x = Math.random() * (maxX - minX) + minX;
+                y = Math.random() * (maxY - minY) + minY;
+            } while (Math.abs(x - btn.offsetLeft) < 100 && Math.abs(y - btn.offsetTop) < 100);
+            
             btn.style.position = "absolute";
             btn.style.left = `${x}px`;
             btn.style.top = `${y}px`;
